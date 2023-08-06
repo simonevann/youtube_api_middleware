@@ -88,13 +88,13 @@ class Data extends Db
         }
         //remove all the item with the status private
         $data = json_decode(file_get_contents($url),true);
-        //$items = $data['items'];
-        //foreach($items as $key => $item){
-        //    if($item['status']['privacyStatus'] == 'private' || $item['status']['privacyStatus'] == 'unlisted'){
-        //        unset($items[$key]);
-        //    }
-        //}
-        //$data['items'] = $items;
+        $items = $data['items'];
+        foreach($items as $key => $item){
+            if($item['status']['privacyStatus'] == 'private' || $item['status']['privacyStatus'] == 'unlisted'){
+                unset($items[$key]);
+            }
+        }
+        $data['items'] = $items;
         return $data;
     }
 
