@@ -1,0 +1,9 @@
+[database]
+db_name     = dashboard
+db_user     = 
+db_password = 
+db_host     = localhost
+
+[application]
+app_email = mailer@myapp.com
+app_url   = myapp.com
